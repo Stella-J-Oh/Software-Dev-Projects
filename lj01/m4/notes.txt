@@ -1,0 +1,14 @@
+Team BLOKS (Stella Oh, Liam Kronman, Benjamin Gallai)
+SoftDev
+LJ01 -- MongoDB Ch 4
+2020-11-12
+
+QUERY OPERATORS: COMPARISON
+$eq = EQual to
+$neq = Not EQual to
+$gt > Greater Than
+$lt < Less Than
+$gte >= Greater Than or Equal to
+$lte <= Less Than or Equal to
+{<field>: { <operator>: <value> }}
+
