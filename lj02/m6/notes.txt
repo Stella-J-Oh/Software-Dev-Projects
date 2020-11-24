@@ -1,4 +1,4 @@
-Team BLOKS (Stella Oh, Liam Kronman, Benjamin Gallai)
+Team Meow Wow (Stella Oh, Michelle Thuang, Mary Shang)
 SoftDev
 LJ01 -- MongoDB Ch 6
 2020-11-24
