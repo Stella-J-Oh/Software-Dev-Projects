@@ -3,3 +3,76 @@ SoftDev
 LJ01 -- MongoDB Ch 5
 2020-11-24
 
+AGGREGATION FRAMEWORK: Another way to query data in MongoDB
+- compute, reshape, and reorganizes data
+- Syntax
+    db.<collection>.aggregate([<array>])
+- Non-filter stages do not modify the original data.
+  Instead they work with the data in the cursor
+- Field filters: $match and $filter
+- Data in the aggregation pipeline exists within the pipeline.
+  It does not inherently modify or change the original data.
+- Aggregation syntax is in the form of a pipeline, where
+  stages are executed in the order in which they are listed.
+  The stage is preceded with the dollar sign and followed by
+  the required action descriptions like $sum
+
+$group
+- An operator that takes the incoming stream of data,
+  and siphons it into multiple distinct reservoirs
+- Syntax
+    { $group:
+        { _id: "<id>", //Group By Expression
+          <field1>: { <accumulator1> : <expression1> },
+          ... }}
+
+SORT() AND LIMIT()
+- cursor methods like pretty() and count()
+- not applied to data but applied to the results set that lives
+  in the cursor
+- cursor.sort()
+    sorts data by one or more fields in increasing
+    or decreasing direction
+        ex) db.<collection>.find(<query>).sort({ "pop": 1, "city": -1 })
+- cursor.limit()
+    specific results but there's a caveat to using this
+        ex) db.<collection>.find(<query>).sort({ "pop": 1 }).limit(1)
+- MongoDB assumes that when you use sort() and limit(),
+  you always mean to sort first, regardless of the order you
+  type them in
+
+INDEXES
+- In a database — special data structure that stores a small portion of
+  the collection's data set in an easy to traverse form
+- Use Index when supporting your queries
+    ex) db.<collection>.createIndex({<ind_field>: <number>})
+        db.<collection>.createIndex(<field>:<value>,<ind_field>: <number>})
+- Index avoids sorting
+- Single field index & Compound field index
+
+DATA MODELING
+- a way to organize fields in a document to support your application performances
+  and querying capabilities
+- RULE: Data is stored in the way that it is used
+- Data that is used together should be stored together
+- Evolving application implies an evolving data model
+
+UPSERT
+- Everything in MQL that is used to locate a document in a collection can
+  also be used to modify this document
+    ex) db.collection.updateOne({<query to locate>},{<update>})
+- Upsert is a hybrid of update and insert, it should only be used when it is
+  needed
+    ex) db.collection.updateOne({<query>},{<update>},{"upsert":true})
+- By default, upsert is set to false
+- If upset is set to true, expect it to either do an update or insert
+    - Update will happen if there are docs that match the filter criteria of
+      the update operation
+    - Insert will happen if no docs match criteria
+- Be mindful: Id {<update>} enough to create a new doc? Will the doc have the
+  same or similar form to other docs in the collection?
+- Upsert: true
+    Upsert is good to use for conditional updates when you may want a new doc
+    instead of an updated doc
+- Upsert: false
+    Make an update to existing doc or insert brand new doc

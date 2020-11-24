@@ -2,3 +2,41 @@ Team BLOKS (Stella Oh, Liam Kronman, Benjamin Gallai)
 SoftDev
 LJ01 -- MongoDB Ch 6
 2020-11-24
+
+ATLAS FEATURES - DATA EXPLORER FEATURES
+- Indexes tab has performance advisor for the indexes you create
+- Schema Anti-Patterns tab will provide sound advice about your data model
+- Aggregation tab allows you to build pipelines in UI with syntax guidelines
+  Can export pipeline code to a certain programming language and use it.
+- Atlas search enables advanced text search functionality in your collection
+
+ATLAS PRODUCTS AND OPTIONS
+Atlas:
+- creating an organization is used to create projects
+- each project can have multiple clusters within it
+Realm:
+- offers services that let developers build web or mobile applications or just integrate
+  MongoDB Atlas data into an application without worrying about managing or scaling servers
+- Has a documentation page
+Charts:
+- allows creation of dynamic data visualizations and use visualizations wherver we like
+- Adding a dashboard can have many charts in it
+
+MongoDB COMPASS
+- MongoDB's Graphical User Interface Product
+- provide a connection to your Atlas cluster or any other deployment you want to connect to
+- admin, config, local are automatically created databse (rule of thumb: NEVER TOUCH THEM)
+- Can see storage size, collections, and indexes of each databse
+- Each collection shows documents, avg. doc size, total doc size, num. indexes, etc.
+- Provides different views of data (JSON format, table format, etc.)
+- can filter, project, sort, limit, etc. documents
+- can export syntax into multiple programming languages
+- also has Aggregatios, Indexes, and Schema tab as well as Explain Plan and Validation tabs
+
+Extra resources:
+Documentation about the Validation tab in Compass: https://docs.mongodb.com/compass/master/validation
+Schedma Validation with MongoDB Documentation: https://docs.mongodb.com/manual/core/schema-validation/
+JSON Schema Validation - Locking down your model the smart way:
+    https://www.mongodb.com/blog/post/json-schema-validation--locking-down-your-model-the-smart-way
+JSON Schema Validatoin - CHecking Your Arrays:
+    https://www.mongodb.com/blog/post/json-schema-validation--checking-your-arrays
