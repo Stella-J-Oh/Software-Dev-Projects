@@ -26,6 +26,13 @@ var clicky = function(e) {
 // the order the event handler is executed only depends on the order of capturing and bubbling
 // in this case, the event handlers are executed only according to the capturing order
 // (because of the "true" at the end of each addEventListener)
+
+//Predict, then test...
+// the boolean argument makes the function go through
+//Q: What effect does the boolean arg have in each?
+//.  (Leave exactly 1 version uncommented to test...)
+// The boolean argument specifies whether the event is captured or not
+
 for (var x=0; x < tds.length; x++) {
   tds[x].addEventListener('click', clicky, true);
 }
